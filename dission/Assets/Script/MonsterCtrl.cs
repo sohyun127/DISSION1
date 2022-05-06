@@ -10,7 +10,8 @@ public class MonsterCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(monObj.tag == "Monster1") // 몬스터 체력 10
+        
+        if (monObj.tag == "Monster1") // 몬스터 체력 10
         {
             hp = 10;
         }

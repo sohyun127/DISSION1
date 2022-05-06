@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Chick
+  - Medicine
+  - Weapon
   layers:
   - Default
   - TransparentFX
