@@ -3,8 +3,6 @@
 using UnityEngine.InputSystem;
 #endif
 
-/* Note: animations are called via the controller for both the character and capsule using animator null checks
- */
 
 namespace StarterAssets
 {
@@ -63,7 +61,7 @@ namespace StarterAssets
 		private float _cinemachineTargetYaw;
 		private float _cinemachineTargetPitch;
 
-		// player
+		// 플레이어 변수
 		private float _speed;
 		private float _animationBlend;
 		private float _targetRotation = 0.0f;
@@ -75,7 +73,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		// animation IDs
+		// 애니메이션
 		private int _animIDSpeed;
 		private int _animIDGrounded;
 		private int _animIDJump;
