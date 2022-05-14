@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
-  - Chick
   - Medicine
   - Weapon
   - NPC
+  - Item
+  - Animals
   layers:
   - Default
   - TransparentFX
