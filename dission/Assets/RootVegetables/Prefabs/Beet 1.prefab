@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 33649283181226336}
   - component: {fileID: 23944550476075074}
   - component: {fileID: 136003572135623424}
+  - component: {fileID: 7935999462460074630}
   m_Layer: 0
-  m_Name: Beet
-  m_TagString: Untagged
+  m_Name: Beet 1
+  m_TagString: Medicine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,3 +97,16 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &7935999462460074630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616580530717364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d3fcfc801fb564683adf6135658ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
