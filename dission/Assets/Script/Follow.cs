@@ -4,67 +4,62 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    public Transform follow;
-    [SerializeField] float m_Speed;
-    [SerializeField] float m_MaxRayDist = 1;
-    [SerializeField] float m_Zoom = 3f;
-    RaycastHit m_Hit;
-    Vector2 m_Input;
+
+    public Transform objectTofollow;
+    public float followSpeed = 10f;
+    public float sensitivity = 100f;
+    public float clampAngle = 70f;
+
+    private float rotX;
+    private float rotY;
+
+    public Transform realCamera;
+    public Vector3 dirNormalized;
+    public Vector3 finalDir;
+    public float minDistance;
+    public float maxDistance;
+    public float finalDistance;
+    public float smoothness = 10f;
 
     void Start()
     {
+        rotX = transform.localRotation.eulerAngles.x;
+        rotY = transform.localRotation.eulerAngles.y;
+
+        dirNormalized = realCamera.localPosition.normalized;
+        finalDistance = realCamera.localPosition.magnitude;
     }
 
-    void Rotate()
+    void Update()
     {
-        if (Input.GetMouseButton(0))
+        rotX += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        rotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+
+        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+
+        Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
+        transform.rotation = rot;
+    }
+    void LateUpdate()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, objectTofollow.position, followSpeed * Time.deltaTime);
+
+        finalDir = transform.TransformPoint(dirNormalized * maxDistance);
+
+        RaycastHit hit;
+
+        if(Physics.Linecast(transform.position,finalDir,out hit))
         {
-            m_Input.x = Input.GetAxis("Mouse X");
-            m_Input.y = Input.GetAxis("Mouse Y");
-
-            if (m_Input.magnitude != 0)
-            {
-                Quaternion q = follow.rotation;
-                q.eulerAngles = new Vector3(q.eulerAngles.x + m_Input.y * m_Speed, q.eulerAngles.y + m_Input.x * m_Speed, q.eulerAngles.z);
-                follow.rotation = q;
-
-            }
+            finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }
-    }
-
-    void Zoom()
-    {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0)
+        else
         {
-            Transform cam = Camera.main.transform;
-            if (CheckRay(cam, scroll))
-            {
-                Vector3 targetDist = cam.transform.position - follow.transform.position;
-                targetDist = Vector3.Normalize(targetDist);
-                Camera.main.transform.position -= (targetDist * scroll * m_Zoom);
-            }
+            finalDistance = maxDistance;
         }
-
-        Camera.main.transform.LookAt(follow.transform);
+        realCamera.localPosition = Vector3.Lerp(realCamera.localPosition, dirNormalized * finalDistance, Time.deltaTime * smoothness);
     }
 
-    public void LateUpdate()
-    {
-        Rotate();
-        Zoom();
-    }
 
-    bool CheckRay(Transform cam, float scroll)
-    {
-        if (Physics.Raycast(cam.position, transform.forward, out m_Hit, m_MaxRayDist))
-        {
-            Debug.Log("hit point : " + m_Hit.point + ", distance : " + m_Hit.distance + ", name : " + m_Hit.collider.name);
-            Debug.DrawRay(cam.position, transform.forward * m_Hit.distance, Color.red);
-            cam.position += new Vector3(0, 0, m_Hit.point.z);
-            return false;
-        }
-
-        return true;
-    }
 }
+
+

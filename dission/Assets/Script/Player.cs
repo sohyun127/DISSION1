@@ -9,11 +9,8 @@ public class Player : MonoBehaviour
     public float speed = 15;
     Vector3 moveVec;
 
-    void Start()
-    {
-        
-    }
 
+  
     // Update is called once per frame
     void Update()
     {
@@ -25,5 +22,10 @@ public class Player : MonoBehaviour
         transform.position += moveVec * speed * Time.deltaTime;
 
         transform.LookAt(transform.position + moveVec);
+
+
     }
+
+  
+
 }
