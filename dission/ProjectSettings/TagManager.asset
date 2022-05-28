@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - NPC
   - Food
+  - Animals
   layers:
   - Default
   - TransparentFX
