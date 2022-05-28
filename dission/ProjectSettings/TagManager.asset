@@ -9,6 +9,7 @@ TagManager:
   - Medicine
   - Weapon
   - NPC
+  - Food
   layers:
   - Default
   - TransparentFX
