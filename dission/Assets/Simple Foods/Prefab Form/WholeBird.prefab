@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963739717108670263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.83531, y: 21.248, z: -119.94556}
+  m_LocalPosition: {x: 80.182304, y: -3.0258718, z: -95.70654}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6747580200918759511}
@@ -139,6 +139,8 @@ MonoBehaviour:
   talkManager: {fileID: 0}
   talkIndex: 0
   nameIndex: 0
+  hpGauge: {fileID: 0}
+  hungryGauge: {fileID: 0}
   speed: 5
   layermask:
     serializedVersion: 2
@@ -151,7 +153,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963739717108670263}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4, y: 1, z: 1}

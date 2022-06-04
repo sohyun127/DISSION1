@@ -68,7 +68,7 @@ public class MedicineCtrl : MonoBehaviour
         Vector3 basePosition = transform.position;
 
         float posX = basePosition.x + Random.Range(-1f, 1f);
-        float posY = basePosition.y + Random.Range(-0.01f, 0.02f);
+        float posY = basePosition.y ;
         float posZ = basePosition.z + Random.Range(-1f, 1f);
 
         Vector3 spawnPos = new Vector3(posX, posY, posZ);

@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433311697090166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142.82047, y: 21.248, z: -73.438934}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 142.8303, y: -4.780176, z: -73.08785}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433311697090166}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.1
   m_Height: 0.8
@@ -109,4 +109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d3fcfc801fb564683adf6135658ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Quest: {fileID: 0}
+  isAction: 0
+  talkText: {fileID: 0}
+  nameText: {fileID: 0}
+  talkManager: {fileID: 0}
+  talkIndex: 0
+  nameIndex: 0
+  hpGauge: {fileID: 0}
+  hungryGauge: {fileID: 0}
   speed: 5
+  layermask:
+    serializedVersion: 2
+    m_Bits: 0

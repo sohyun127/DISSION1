@@ -20,6 +20,8 @@ public class PlayerCtrl: MonoBehaviour
     public int talkIndex;
     public int nameIndex;
 
+    public GameObject hpGauge;
+    public GameObject hungryGauge;
 
     //------------- 임시로 캐릭터 움직임 구현 (추후 삭제) -------------
     public float speed = 5f;
@@ -104,7 +106,8 @@ public class PlayerCtrl: MonoBehaviour
         if (col.gameObject.tag == "Animals") // 동물과 충돌
         {
             hp -= 5;  // 플레이어의 hp감소 
-            
+            this.hpGauge.GetComponent<Image>().fillAmount -= 0.05f;
+
             print("동물에게 데미지를 얻었습니다."+ hp);
         }
     }

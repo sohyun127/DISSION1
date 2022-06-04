@@ -17,7 +17,7 @@ public class ItemCtrl : PlayerCtrl // 인벤토리 하면 상속 해제하기
         transform.Rotate(new Vector3(0, 360f, 0), Time.deltaTime * 45, Space.World);
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player") // 플레이어와 충돌 시
         {
