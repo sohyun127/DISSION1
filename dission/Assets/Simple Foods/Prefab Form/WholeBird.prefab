@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963739717108670263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.09796, y: 21.248, z: -117.20959}
+  m_LocalPosition: {x: 79.83531, y: 21.248, z: -119.94556}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6747580200918759511}
@@ -132,7 +132,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d3fcfc801fb564683adf6135658ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Quest: {fileID: 0}
+  isAction: 0
+  talkText: {fileID: 0}
+  nameText: {fileID: 0}
+  talkManager: {fileID: 0}
+  talkIndex: 0
+  nameIndex: 0
   speed: 5
+  layermask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &-6382013041541241906
 BoxCollider:
   m_ObjectHideFlags: 0
