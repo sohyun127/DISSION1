@@ -11,11 +11,14 @@ public class AnimalCtrl : MonoBehaviour
 
     private Rigidbody ani;
 
+    // public GameObject[] aniNum;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(MoveObject());
     }
+
     IEnumerator MoveObject()
     {
         ani = GetComponent<Rigidbody>();

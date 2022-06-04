@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCtrl: MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class PlayerCtrl: MonoBehaviour
 
         FireRay();
 
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
     }
     //------------- ------------------------------ -------------
 
@@ -105,7 +111,7 @@ public class PlayerCtrl: MonoBehaviour
     {
         if (col.gameObject.tag == "Animals") // 동물과 충돌
         {
-            hp -= 5;  // 플레이어의 hp감소 
+            hp -= 50;  // 플레이어의 hp감소 
             this.hpGauge.GetComponent<Image>().fillAmount -= 0.05f;
 
             print("동물에게 데미지를 얻었습니다."+ hp);
