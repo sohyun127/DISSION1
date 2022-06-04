@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -6,6 +8,8 @@ using UnityEngine.InputSystem;
 
 namespace StarterAssets
 {
+
+
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
@@ -67,10 +71,14 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+		private PlayerCtrl playerctrl;
+
 
 		private const float _threshold = 0.01f;
 
 		private bool _hasAnimator;
+		
+
 
 		private void Awake()
 		{
@@ -79,6 +87,9 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+
+			playerctrl = GameObject.Find("Player").GetComponent<PlayerCtrl>();
 		}
 
 		private void Start()
@@ -100,6 +111,7 @@ namespace StarterAssets
 			
 			JumpAndGravity();
 			GroundedCheck();
+			if(!playerctrl.isAction)
 			Move();
 		}
 
