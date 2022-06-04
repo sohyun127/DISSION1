@@ -10,6 +10,7 @@ public class AnimalCtrl : MonoBehaviour
     public GameObject aniObj;
 
     private Rigidbody ani;
+    private PlayerCtrl playerctrl;
 
     // public GameObject[] aniNum;
 
@@ -17,6 +18,7 @@ public class AnimalCtrl : MonoBehaviour
     void Start()
     {
         StartCoroutine(MoveObject());
+        playerctrl = GameObject.Find("Player").GetComponent<PlayerCtrl>();
     }
 
     IEnumerator MoveObject()
@@ -40,19 +42,26 @@ public class AnimalCtrl : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Weapon") // 무기와 충돌 시
-        {
-            // 제거
-            Destroy(aniObj, 1);
+        
+        
+            if (col.gameObject.tag == "Weapon" ) // 무기와 충돌 시
+            {
+                // 제거
+                Destroy(aniObj, 1);
 
-            // 랜덤 위치에 생성
-            StartCoroutine("addAnimal");
+                // 랜덤 위치에 생성
+                StartCoroutine("addAnimal");
 
-            // 아이템 드랍
-            Vector3 v = new Vector3(0f, -1f, 1f);
-            Item.transform.position = col.transform.position + v;
-            StartCoroutine("dropItems");
-        }
+                playerctrl.foodCount++;
+
+                // 아이템 드랍
+                Vector3 v = new Vector3(0f, -1f, 1f);
+                Item.transform.position = col.transform.position + v;
+                StartCoroutine("dropItems");
+            }
+
+        
+       
     }
 
     IEnumerator dropItems()

@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963739717108670263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.98752, y: -2.314476, z: -96.23759}
+  m_LocalPosition: {x: 80.922676, y: -2.3251798, z: -94.6431}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6747580200918759511}
@@ -144,6 +144,8 @@ MonoBehaviour:
   layermask:
     serializedVersion: 2
     m_Bits: 0
+  isAttack: 0
+  foodCount: 0
 --- !u!65 &-6382013041541241906
 BoxCollider:
   m_ObjectHideFlags: 0

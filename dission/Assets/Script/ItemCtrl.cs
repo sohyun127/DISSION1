@@ -25,9 +25,10 @@ public class ItemCtrl : PlayerCtrl // 인벤토리 하면 상속 해제하기
             // (인벤토리 증가)  인벤토리 구현 시 수정
 
             if (gameObject.tag == "Food")
-            {                
+            {
                 hungry = 100; // 허기 게이지 만땅으로 채우기
                 print("음식 획득 hungry=" + hungry);
+             
             }
             else if (gameObject.tag == "Medicine")
             {

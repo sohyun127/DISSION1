@@ -43,12 +43,14 @@ public class Level : MonoBehaviour
         if(levelData==(a+1))
         {
             leveling = true;
-            a = 1;
+            a ++;
             levelFullUi.SetActive(true);
              Invoke("endleveling", 0.2f);
         }
 
         levelText.text = "" + levelData;
+
+      
     }
 
 

@@ -26,6 +26,9 @@ public class PlayerCtrl: MonoBehaviour
 
     public LayerMask layermask;
     private Animator animator;
+    public bool isAttack = false;
+    public int foodCount = 0;
+    public int medicineCount = 0;
 
     void Update()
     {
@@ -47,8 +50,6 @@ public class PlayerCtrl: MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-
-        attack();
 
 
     }
@@ -105,20 +106,22 @@ public class PlayerCtrl: MonoBehaviour
             this.hpGauge.GetComponent<Image>().fillAmount -= 0.05f;
 
             print("동물에게 데미지를 얻었습니다."+ hp);
+
         }
-    }
 
-
-    void attack()
-    {
-        if(Input.GetMouseButtonDown(0))
+        if(gameObject.tag == "Food")
         {
-           
-           
+            foodCount++;
         }
 
-       
+        if (gameObject.tag == "Medicine")
+        {
+            medicineCount++;
+        }
 
     }
+
+
+   
     
 }
