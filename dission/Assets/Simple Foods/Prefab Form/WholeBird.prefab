@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963739717108670263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.052444, y: -2.2397282, z: -98.36303}
+  m_LocalPosition: {x: 78.98752, y: -2.314476, z: -96.23759}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6747580200918759511}
@@ -141,7 +141,6 @@ MonoBehaviour:
   nameIndex: 0
   hpGauge: {fileID: 0}
   hungryGauge: {fileID: 0}
-  speed: 5
   layermask:
     serializedVersion: 2
     m_Bits: 0

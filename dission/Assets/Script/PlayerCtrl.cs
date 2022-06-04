@@ -24,9 +24,8 @@ public class PlayerCtrl: MonoBehaviour
     public GameObject hpGauge;
     public GameObject hungryGauge;
 
-    //------------- 임시로 캐릭터 움직임 구현 (추후 삭제) -------------
-    public float speed = 5f;
     public LayerMask layermask;
+    private Animator animator;
 
     void Update()
     {
@@ -39,23 +38,7 @@ public class PlayerCtrl: MonoBehaviour
             hungryTime = 10; // 다시 시작
         }
         
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(0, 0, speed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(0, 0, -speed * Time.deltaTime);
-        }
-
+  
         Quest.SetActive(false);
 
         FireRay();
@@ -65,8 +48,15 @@ public class PlayerCtrl: MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
+        attack();
+
+
     }
-    //------------- ------------------------------ -------------
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     void FireRay()
@@ -118,5 +108,17 @@ public class PlayerCtrl: MonoBehaviour
         }
     }
 
+
+    void attack()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+           
+           
+        }
+
+       
+
+    }
     
 }
