@@ -55,8 +55,9 @@ public class AnimalCtrl : MonoBehaviour
                 Item.transform.position = col.transform.position + v;
                 StartCoroutine("dropItems");
 
-                 playerctrl.foodCount++;
-              }
+                   playerctrl.foodCount++;
+
+             }
 
         
        

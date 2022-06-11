@@ -104,19 +104,7 @@ public class PlayerCtrl: MonoBehaviour
             hp -= 5;  // 플레이어의 hp감소 
         }
 
-        if(gameObject.tag == "Food")
-        {
-            foodCount++;
 
-            //hungry = 100;
-        }
-
-        if (gameObject.tag == "Medicine")
-        {
-            medicineCount++;
-
-            //hp = 100;
-        }
 
     }
 

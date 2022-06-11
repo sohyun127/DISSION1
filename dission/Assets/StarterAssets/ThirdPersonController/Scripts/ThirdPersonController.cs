@@ -71,10 +71,7 @@ namespace StarterAssets
 
 		private Animator animator;
 		private bool move = false;
-
-
-		
-
+		public GameObject weapon;
 
 		private void Awake()
 		{
@@ -86,6 +83,7 @@ namespace StarterAssets
 
 
 			playerctrl = GameObject.Find("Player").GetComponent<PlayerCtrl>();
+
 		}
 
 		private void Start()
@@ -105,9 +103,20 @@ namespace StarterAssets
 		private void Update()
 		{
 			
-			
+			if(Input.GetMouseButtonDown(0))
+            {
+				animator.SetBool("attack", true);
+				weapon.GetComponent<BoxCollider>().enabled = true;
+			}
+			else
+            {
+				Invoke("offattack", 1.0f);
+				animator.SetBool("attack", false);
+			}
+
 			JumpAndGravity();
 			GroundedCheck();
+
 			if(!playerctrl.isAction)
 			Move();
 
@@ -120,6 +129,10 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
+		private void offattack()
+        {
+			weapon.GetComponent<BoxCollider>().enabled = false;
+		}
 		
 
 		private void GroundedCheck()

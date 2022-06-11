@@ -6,11 +6,12 @@ public class MedicineCtrl : MonoBehaviour
 {
     public GameObject Item;
     public GameObject mediObj;
+    private PlayerCtrl playerctrl;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerctrl = GameObject.Find("Player").GetComponent<PlayerCtrl>();
     }
 
     // Update is called once per frame
@@ -33,6 +34,8 @@ public class MedicineCtrl : MonoBehaviour
             Vector3 v = new Vector3(0f, -1f, 1f);
             Item.transform.position = col.transform.position + v;
             StartCoroutine("dropItems");
+
+            playerctrl.medicineCount++;
         }
     }
 
