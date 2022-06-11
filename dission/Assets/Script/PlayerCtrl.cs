@@ -104,9 +104,6 @@ public class PlayerCtrl: MonoBehaviour
             hp -= 5;  // 플레이어의 hp감소 
         }
 
-
-
     }
-
 
 }

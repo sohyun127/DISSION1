@@ -20,7 +20,7 @@ public class MedicineCtrl : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Weapon") // 무기와 충돌 시
         {
