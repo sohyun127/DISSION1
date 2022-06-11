@@ -42,8 +42,6 @@ public class AnimalCtrl : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        
-        
             if (col.gameObject.tag == "Weapon" ) // 무기와 충돌 시
             {
                 // 제거
@@ -52,13 +50,13 @@ public class AnimalCtrl : MonoBehaviour
                 // 랜덤 위치에 생성
                 StartCoroutine("addAnimal");
 
-                playerctrl.foodCount++;
-
                 // 아이템 드랍
                 Vector3 v = new Vector3(0f, -1f, 1f);
                 Item.transform.position = col.transform.position + v;
                 StartCoroutine("dropItems");
-            }
+
+                 playerctrl.foodCount++;
+              }
 
         
        

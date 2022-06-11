@@ -1583,6 +1583,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe_OS
       objectReference: {fileID: 0}
+    - target: {fileID: 1776472905282870, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776472905282870, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 4299309068816990, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3012,6 +3020,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4943765590059028, guid: e7489574cca6d4645a7019414b8288e8, type: 3}
   m_PrefabInstance: {fileID: 221895431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &222652042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776472905282870, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
+  m_PrefabInstance: {fileID: 134846693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &222652043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222652042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3252238, y: 0.056578364, z: 1.4964223}
+  m_Center: {x: -0.091946006, y: 0.000020963034, z: -0.029598113}
 --- !u!1001 &223226636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15822,7 +15848,7 @@ GameObject:
   - component: {fileID: 1329962337}
   m_Layer: 7
   m_Name: weapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
