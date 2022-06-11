@@ -29,6 +29,10 @@ public class PlayerCtrl: MonoBehaviour
 
     void Update()
     {
+        // 게이지 업데이트
+        this.hungryGauge.GetComponent<Image>().fillAmount = hungry / 100f;
+        this.hpGauge.GetComponent<Image>().fillAmount = hp / 100f;
+
         hungryTime -= Time.deltaTime;
 
         if (hungryTime < 0 )
@@ -47,9 +51,6 @@ public class PlayerCtrl: MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        // 게이지 업데이트
-        this.hungryGauge.GetComponent<Image>().fillAmount = hungry / 100f;
-        this.hpGauge.GetComponent<Image>().fillAmount = hp / 100f;
     }
 
     void Start()
@@ -107,14 +108,14 @@ public class PlayerCtrl: MonoBehaviour
         {
             foodCount++;
 
-            hungry = 100;
+            //hungry = 100;
         }
 
         if (gameObject.tag == "Medicine")
         {
             medicineCount++;
 
-            hp = 100;
+            //hp = 100;
         }
 
     }
