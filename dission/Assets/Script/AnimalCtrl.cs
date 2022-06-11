@@ -90,9 +90,6 @@ public class AnimalCtrl : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(posX, posY, posZ);
 
-        // 이렇게하면 y축 계속 떨어짐... 왜...?
-        //Vector3 spawnPos = new Vector3(Random.Range(-60f, -83f), Random.Range(0f, 2f), Random.Range(-90f, -120f)); 
-
         return spawnPos;
     }
 }

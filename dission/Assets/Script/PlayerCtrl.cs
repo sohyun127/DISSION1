@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerCtrl: MonoBehaviour
 {
     
-    protected static int hp = 100;  // [ 플레이어 hp ]
-    protected static int hungry = 100;  // [ 허기 게이지 ]
-    float hungryTime = 10; // 10초 마다 허기게이지 1씩 감소 => 약 15분 후 허기0
+    protected static int hp = 100;  
+    protected static int hungry = 100; 
+    float hungryTime = 10; // 10초 마다 허기게이지 1감소 => 약 15분 후 허기 0
     public GameObject Quest;
     public bool isAction = false;
     public Text talkText;
@@ -34,13 +34,10 @@ public class PlayerCtrl: MonoBehaviour
         if (hungryTime < 0 )
         {
             hungry -= 1;
-            print("허기게이지 1 감소  hungry=" + hungry);
-            // this.hungryGauge.GetComponent<Image>().fillAmount = hungry / 100f; 
 
             hungryTime = 10; // 다시 시작
         }
         
-  
         Quest.SetActive(false);
 
         FireRay();
@@ -50,7 +47,7 @@ public class PlayerCtrl: MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-
+        // 게이지 업데이트
         this.hungryGauge.GetComponent<Image>().fillAmount = hungry / 100f;
         this.hpGauge.GetComponent<Image>().fillAmount = hp / 100f;
     }
@@ -104,9 +101,6 @@ public class PlayerCtrl: MonoBehaviour
         if (col.gameObject.tag == "Animals") // 동물과 충돌
         {
             hp -= 5;  // 플레이어의 hp감소 
-            // this.hpGauge.GetComponent<Image>().fillAmount -= 0.05f;
-            //this.hpGauge.GetComponent<Image>().fillAmount = hp/100f;
-            print("동물에게 데미지를 얻었습니다."+ hp);
         }
 
         if(gameObject.tag == "Food")
@@ -114,7 +108,6 @@ public class PlayerCtrl: MonoBehaviour
             foodCount++;
 
             hungry = 100;
-            //this.hungryGauge.GetComponent<Image>().fillAmount = 1f;
         }
 
         if (gameObject.tag == "Medicine")
@@ -122,7 +115,6 @@ public class PlayerCtrl: MonoBehaviour
             medicineCount++;
 
             hp = 100;
-            //this.hpGauge.GetComponent<Image>().fillAmount = 1f;
         }
 
     }

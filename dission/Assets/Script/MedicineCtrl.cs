@@ -23,8 +23,6 @@ public class MedicineCtrl : MonoBehaviour
     {
         if (col.gameObject.tag == "Weapon") // 무기와 충돌 시
         {
-            //print(mediObj.tag + "채집완료!");
-
             // 제거
             Destroy(mediObj, 1);
 
@@ -56,7 +54,7 @@ public class MedicineCtrl : MonoBehaviour
 
     IEnumerator addMedicine()
     {
-        yield return new WaitForSeconds(0.9f); // 딜레이 : 1초 넘기면 코루틴 실행안되니까,,
+        yield return new WaitForSeconds(0.9f); // 딜레이 
 
         Vector3 spawnPos = GetRandomPosition();
 
@@ -72,9 +70,6 @@ public class MedicineCtrl : MonoBehaviour
         float posZ = basePosition.z + Random.Range(-1f, 1f);
 
         Vector3 spawnPos = new Vector3(posX, posY, posZ);
-
-        // 이렇게하면 y축 계속 떨어짐... 왜...?
-        //Vector3 spawnPos = new Vector3(Random.Range(-60f, -83f), Random.Range(0f, 2f), Random.Range(-90f, -120f)); 
 
         return spawnPos;
     }
